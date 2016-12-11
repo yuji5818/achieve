@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
   
+  
   def new
    if params[:back]
     @blog = Blog.new(blogs_params)
@@ -20,6 +21,7 @@ class BlogsController < ApplicationController
   
   def create
     @blog = Blog.new(blogs_params)
+    @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -44,7 +46,8 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    redirect_to blogs_path, notice:"ブログを削除しました！"
+    @blogs = Blog.all
+    render  'index', notice:"ブログを削除しました！"
   end
   
   private 
