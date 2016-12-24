@@ -43,10 +43,17 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'twitter-bootstrap-rails'
 
 gem 'jquery-turbolinks'
 
+
 group :development do
   gem 'letter_opener_web'
 end
+
+gem 'devise'
+
+gem 'faker'
