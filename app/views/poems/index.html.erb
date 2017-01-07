@@ -1,7 +1,15 @@
+<link rel="stylesheets" href="poems.scss">
+
+<div class="poems-text">
+<p class="poems-text">
 <% @poems.each do |poem| %>
 　
   <%= poem.title %>
+  <br>
   <%= poem.content %>
   <br>
   <%= link_to "詳細画面はこちら", poem_path(poem.id) %>
+  <br>
 <% end %>
+</p>
+</div>
