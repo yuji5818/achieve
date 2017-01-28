@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
-  mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
-  has_many :blogs
+  mount_uploader :avatar, AvatarUploader
+  has_many :blogs, dependent: :destroy
+  # CommentモデルのAssociationを設定
+  has_many :comments, dependent: :destroy
 
   def self.create_unique_string
     SecureRandom.uuid
@@ -45,7 +47,7 @@ class User < ActiveRecord::Base
     end
     user
   end
-  
+
   def update_with_password(params, *options)
   if provider.blank?
     super
