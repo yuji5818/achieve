@@ -22,7 +22,6 @@ class CommentsController < ApplicationController
     # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを使用します。
     @comment = Comment.find(params[:id])
     @comment.destroy
-    binding.pry
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
         format.js { render :index }
