@@ -43,7 +43,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
-  gem 'better_errors'
 end
 
 gem 'rails_12factor', group: :production
@@ -55,8 +54,6 @@ gem 'jquery-turbolinks'
 
 group :development do
   gem 'letter_opener_web'
-  gem 'pry-rails'
-  gem 'better_errors'
   gem 'dotenv-rails'
 end
 

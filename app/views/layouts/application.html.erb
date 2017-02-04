@@ -7,7 +7,7 @@
 </head>
 <body>
 
- <header>   
+ <header>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,6 +28,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "ブログ", blogs_path %></li>
+            <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
           </ul>
         </li>
      <% if user_signed_in? %>
@@ -41,7 +42,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-　</header> 
+　</header>
 　
 <%= yield %>
 

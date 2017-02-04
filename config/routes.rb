@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   root 'top#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   devise_for :users, controllers:{
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  resources :users, only: [:index, :show]
+
+
+  resources :relationships, only: [:create, :destroy]
   resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :comments
+  resources :comments
 
     collection do
       post :confirm
