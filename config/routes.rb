@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
+  resources :notifications, only:[:index]
 
   resources :relationships, only: [:create, :destroy]
   resources :blogs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
