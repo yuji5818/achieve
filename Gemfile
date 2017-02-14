@@ -43,6 +43,12 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
+
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 gem 'rails_12factor', group: :production
@@ -71,8 +77,12 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
+gem 'therubyracer', platforms: :ruby
+
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
 gem 'pusher'
 gem 'fog'
+gem 'dotenv-rails'
+gem 'unicorn'
