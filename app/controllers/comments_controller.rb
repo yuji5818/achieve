@@ -12,11 +12,11 @@ class CommentsController < ApplicationController
         format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
         format.json { render :show, status: :created, location: @comment }
         format.js { render :index }
-        unless @comment.blog.user_id == current_user.id
+      unless @comment.blog.user_id == current_user.id
           Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
             message: 'あなたの作成したブログにコメントが付きました'
-          })
-        end
+          })  
+       end
         Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
           unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
         })
