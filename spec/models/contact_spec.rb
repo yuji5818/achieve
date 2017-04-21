@@ -20,6 +20,6 @@ describe Contact do
 
   it "全てフォーム欄を満たしていると成功" do
     contact = Contact.new(name: '秦野', email: 'yuji0000@test.com', content: '問い合わせです')
-    expect(contact). to eq_valid
+    expect(contact).to be_valid
   end
 end
