@@ -39,9 +39,6 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'pry-rails'
-
   gem 'capistrano', '3.6.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -57,6 +54,9 @@ gem 'jquery-turbolinks'
 
 
 group :development do
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'letter_opener_web'
   gem 'web-console', '~> 2.0'
   gem 'dotenv-rails'
