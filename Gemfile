@@ -31,64 +31,46 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'capistrano', '3.6.0'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-unicorn'
-end
-
-gem 'rails_12factor', group: :production
-
 gem 'twitter-bootstrap-rails'
-
 gem 'jquery-turbolinks'
-
-
-group :development do
-  gem 'pry-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'letter_opener_web'
-  gem 'web-console', '~> 2.0'
-  gem 'dotenv-rails'
-end
-
 gem 'devise'
-
 gem 'faker'
-
 gem 'rails_admin'
-
 gem 'cancan'
-
 gem 'activeresource'
-
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
 gem 'therubyracer', platforms: :ruby
-
-#image uploader
 gem 'carrierwave'
 gem 'rmagick'
 gem 'pusher'
 gem 'fog'
 gem 'dotenv-rails'
 gem 'unicorn'
-gem 'binding_of_caller'
 
-gem "rspec-rails"
-gem "factory_girl_rails"
+group :development, :test do
+  gem 'byebug'
+  gem 'spring'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+gem 'rails_12factor', group: :production
+
+group :development do
+  gem 'letter_opener_web'
+  gem 'web-console', '~> 2.0'
+  gem 'dotenv-rails'
+end
 
 group :test do
   gem "capybara"
